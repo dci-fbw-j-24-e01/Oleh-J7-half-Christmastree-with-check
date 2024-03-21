@@ -11,32 +11,28 @@ public class Main {
         int rows = scanner.nextInt();
         if (rows > 0 && rows <= 5) {
             System.out.println("Correctly entered number.  " + rows);
-            for (int i = 1; i <= rows; ++i) {
-                for (int j = 1; j <= i; ++j) {
-                    System.out.print("* ");
-                }
-                System.out.println();
-            }
+            painting();
         } else {
-
             System.out.println("I don't understand you, enter a number from 1 to 5. Not this - " + rows);
-
-            rows = scanner.reset().nextInt();
             System.out.println("Let's try again");
-
-            for (int i = 1; i <= rows; ++i) {
-                for (int j = 1; j <= i; ++j) {
-                    System.out.print("* ");
-                }
-                System.out.println();
-            }
+            painting();
         }
-
-
     }
-    public static void check(){
+
+    public static void check() {
         while (!scanner.hasNextInt() && scanner.hasNext()) {
             System.out.println("Wrong. I said the number. Not letters. Where did you look? " + scanner.next());
+        }
+
+    }
+
+    public static void painting() {
+        int rows = scanner.reset().nextInt();
+        for (int i = 1; i <= rows; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                System.out.print("* ");
+            }
+            System.out.println();
         }
     }
 
